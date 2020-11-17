@@ -1,0 +1,7 @@
+"0","set.seed(491)"
+"0","t <- seq(0, 200, 0.01)"
+"0","## pexp: gives cdf "
+"0","S0 <- function(t) 1 - pexp(t, rate = 1/60)"
+"0","Ht <- (1/60) * t "
+"0","gg_S0 <- qplot(x = t, y = S0(t), geom=""line"") + ggtitle(""True Survival Curve"")"
+"0","print(gg_S0)"

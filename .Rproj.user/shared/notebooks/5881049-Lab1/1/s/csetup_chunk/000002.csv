@@ -1,0 +1,9 @@
+"0","knitr::opts_chunk$set(echo = TRUE)"
+"0","library(ggplot2)"
+"2","程辑包‘ggplot2’是用R版本3.6.2 来建造的"
+"2","Registered S3 method overwritten by 'dplyr':
+  method           from
+  print.rowwise_df     
+"
+"0","library(survival)"
+"2","程辑包‘survival’是用R版本3.6.2 来建造的"

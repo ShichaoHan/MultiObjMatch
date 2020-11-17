@@ -1,0 +1,2 @@
+"0","hist(ex4[ex4$z == 0, ""ps""], freq = FALSE, "
+"0","     add = TRUE, breaks = 30)"

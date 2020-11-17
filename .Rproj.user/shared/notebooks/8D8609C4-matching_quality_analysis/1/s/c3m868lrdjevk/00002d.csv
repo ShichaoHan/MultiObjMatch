@@ -1,0 +1,2 @@
+"0","hist(ps2[ex7$treat == 0], freq = FALSE, "
+"0","     add = TRUE, breaks = 30)"

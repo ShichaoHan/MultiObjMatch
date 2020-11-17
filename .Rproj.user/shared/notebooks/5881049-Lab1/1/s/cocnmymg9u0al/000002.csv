@@ -1,0 +1,3 @@
+"0","G_0 <- function(t) pweibull(t, shape=2, scale=80)"
+"0","gg_G0 <- qplot(x = t, y = G_0(t), geom = ""line"") + ggtitle(""True Censoring CDF"")"
+"0","print(gg_G0)"

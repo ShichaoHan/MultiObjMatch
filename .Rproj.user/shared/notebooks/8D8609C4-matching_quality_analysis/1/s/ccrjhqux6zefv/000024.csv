@@ -1,0 +1,16 @@
+"0","hist(ex10[ex10$z == 1, ""ps""], freq = FALSE, col = ""grey"",
+     border = NA, xlab = ""estimated propensity score"",
+     ylab = ""density"",  breaks = 30, 
+     main = ""Propensity Score Distribution for Matched Pairs"", 
+     xlim = c(0, 1), ylim = c(0, 5))
+hist(ex10[ex10$z == 0, ""ps""], freq = FALSE, 
+     add = TRUE, breaks = 30)
+legend(""topright"", c(""Treated"", ""Control""), fill=c(""grey"", ""white""))
+hist(pscoreDKD[mat$z==1], freq = FALSE, col = ""grey"",
+     border = NA, xlab = ""estimated propensity score"",
+     ylab = ""density"",  breaks = 30, 
+     main = ""Propensity Score Distribution"", 
+     xlim = c(0, 1), ylim = c(0, 5))
+"
+"0","hist(pscoreDKD[mat$z==0], freq = FALSE, "
+"0","     add = TRUE, breaks = 30)"

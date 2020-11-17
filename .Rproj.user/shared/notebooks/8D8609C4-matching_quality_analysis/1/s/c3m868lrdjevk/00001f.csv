@@ -1,0 +1,8 @@
+"0","## Example Match 31: Propensity Score Examination "
+"0","ex16 <- matched_data(tempResult2, 16)"
+"0","ex7 <- matched_data(tempResult2, 7)"
+"0","hist(ps2[ex16$treat == 1], freq = FALSE, col = ""grey"","
+"0","     border = NA, xlab = ""estimated propensity score"","
+"0","     ylab = ""density"",  breaks = 30, "
+"0","     main = ""Propensity Score Distribution for Matched Pairs"", "
+"0","     xlim = c(0, 1), ylim = c(0, 15))"

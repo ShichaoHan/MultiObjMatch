@@ -1,0 +1,84 @@
+"0","library(dplyr)"
+"2","Registered S3 method overwritten by 'dplyr':
+  method           from
+  print.rowwise_df     
+"
+"2","
+载入程辑包：‘dplyr’
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","library(optmatch)"
+"2","载入需要的程辑包：survival
+"
+"2","程辑包‘survival’是用R版本3.6.2 来建造的"
+"2","The optmatch package has an academic license. Enter relaxinfo() for more information.
+"
+"0","library(rcbalance)"
+"2","载入需要的程辑包：MASS
+"
+"2","
+载入程辑包：‘MASS’
+
+"
+"2","The following object is masked from ‘package:dplyr’:
+
+    select
+
+"
+"2","载入需要的程辑包：plyr
+"
+"2","---------------------------------------------------------------------------
+"
+"2","You have loaded plyr after dplyr - this is likely to cause problems.
+If you need functions from both plyr and dplyr, please load plyr first, then dplyr:
+library(plyr); library(dplyr)
+"
+"2","---------------------------------------------------------------------------
+"
+"2","
+载入程辑包：‘plyr’
+
+"
+"2","The following objects are masked from ‘package:dplyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+"
+"2","optmatch (>= 0.9-1) needed to run the rcbalance command.  Please load optmatch and agree to its academic license before calling rcbalance.
+"
+"0","library(matchMulti)"
+"2","Registered S3 methods overwritten by 'htmltools':
+  method               from         
+  print.html           tools:rstudio
+  print.shiny.tag      tools:rstudio
+  print.shiny.tag.list tools:rstudio
+"
+"2","Registered S3 method overwritten by 'htmlwidgets':
+  method           from         
+  print.htmlwidget tools:rstudio
+"
+"2","Registered S3 method overwritten by 'data.table':
+  method           from
+  print.data.table     
+"
+"0","library(RCurl)"
+"2","程辑包‘RCurl’是用R版本3.6.2 来建造的"
+"0","library(MultiObjMatch)"
+"0","library(cobalt)"
+"2","程辑包‘cobalt’是用R版本3.6.2 来建造的"
+"2"," cobalt (Version 4.2.2, Build Date: 2020-06-26 15:50:03 UTC)
+"
+"0","data(""lalonde"")"
+"0","library(ggplot2)"
+"2","程辑包‘ggplot2’是用R版本3.6.2 来建造的"

@@ -1,7 +1,7 @@
 # MultiObjMatch: Multi-objective Matching for R
 
 
-The `MultiObjMatch` offers a user-friendly R package that implements matching of two groups of subjects to treated and control groups in observational studies. With user-specified emphasis on three design goals: maximizing closeness in pair-wise measured by Mahalanobis distances, maximizing the number of matched treated units, and minimizing the distance of balance variable's distributions in both groups as measured by total variation distance. More detailed discussion can be found in [Pimentel and Kelz (2010)](https://www.tandfonline.com/doi/pdf/10.1080/01621459.2020.1720693?casa_token=ubLCKouur94AAAAA:LiiihGbqOwfWHhb2UpxZYXqpKsCQWPB5u8OgyjETfIq9ucrM5OIgLq_OZWYz2DgEc2wxIWrWAoMq).    
+The `MultiObjMatch` offers a user-friendly R package that implements matching of two groups of subjects to treated and control groups in observational studies. With user-specified emphasis on three design goals: maximizing closeness in pair-wise measured by Mahalanobis distances, maximizing the number of matched treated units, and minimizing the distance of balance variable's distributions in both groups as measured by total variation distance. More detailed discussion can be found in [Pimentel and Kelz (2020)](https://www.tandfonline.com/doi/pdf/10.1080/01621459.2020.1720693?casa_token=ubLCKouur94AAAAA:LiiihGbqOwfWHhb2UpxZYXqpKsCQWPB5u8OgyjETfIq9ucrM5OIgLq_OZWYz2DgEc2wxIWrWAoMq).    
   
 Besides the main matching algorithm, the package also contains useful functions for generate numeric and graphical diagnostics. 
    

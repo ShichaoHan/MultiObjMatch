@@ -28,7 +28,7 @@ data("lalonde")
 
 ### Matching 
 
-After data pre-processing, users can use the main matching function __multiObjMatch__ to generate a set of possible matches. Users need to specify the input data frame, the name of treatment variable, the name of the outcome variable, the list of columns for measuring pairwise distance, the column for exact matching, the column for measuring the balance for, and the list for $\rho_1$ and $\rho_2$ -  the coefficients for $f_1$ and $f_2$.    
+After data pre-processing, users can use the main matching function __multiObjMatch__ to generate a set of possible matches. Users need to specify the input data frame, the name of treatment variable, the name of the outcome variable, the list of columns for measuring pairwise distance, the column for exact matching, the column for measuring the balance for, and the list for \rho_1 and \rho_2 -  the coefficients for f_1 and f_2.    
 ```r
 psCols <- c("age", "educ", "married", "nodegree")
 treatVal <- "treat"

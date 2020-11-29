@@ -1,7 +1,7 @@
 # MultiObjMatch: Multi-objective Matching for R
 
 
-The `MultiObjMatch` offers a user-friendly R package that implements matching of two groups of subjects to treated and control groups in observational studies. With user-specified emphasis on three design goals: maximizing closeness in pair-wise measured by Mahalanobis distances, maximizing the number of matched treated units, and minimizing the distance of balance variable's distributions in both groups as measured by total variation distance.    
+The `MultiObjMatch` offers a user-friendly R package that implements matching of two groups of subjects to treated and control groups in observational studies. With user-specified emphasis on three design goals: maximizing closeness in pair-wise measured by Mahalanobis distances, maximizing the number of matched treated units, and minimizing the distance of balance variable's distributions in both groups as measured by total variation distance. More detailed discussion can be found in [Pimentel and Kelz (2010)](https://www.tandfonline.com/doi/pdf/10.1080/01621459.2020.1720693?casa_token=ubLCKouur94AAAAA:LiiihGbqOwfWHhb2UpxZYXqpKsCQWPB5u8OgyjETfIq9ucrM5OIgLq_OZWYz2DgEc2wxIWrWAoMq).    
   
 Besides the main matching algorithm, the package also contains useful functions for generate numeric and graphical diagnostics. 
    
@@ -28,7 +28,7 @@ data("lalonde")
 
 ### Matching 
 
-After data pre-processing, users can use the main matching function __multiObjMatch__ to generate a set of possible matches. Users need to specify the input data frame, the name of treatment variable, the name of the outcome variable, the list of columns for measuring pairwise distance, the column for exact matching, the column for measuring the balance for, and the list for $`\rho_1`$ and $`\rho_2`$ -  the coefficients for $`f_1`$ and $`f_2`$.    
+After data pre-processing, users can use the main matching function __multiObjMatch__ to generate a set of possible matches. Users need to specify the input data frame, the name of treatment variable, the name of the outcome variable, the list of columns for measuring pairwise distance, the column for exact matching, the column for measuring the balance for, and the list of  the coefficients for objective functions.    
 ```r
 psCols <- c("age", "educ", "married", "nodegree")
 treatVal <- "treat"
@@ -57,5 +57,24 @@ The number of matched units and percentage of matched units can be automatically
 ```r
 getUnmatched(matchResult)
 ```
+  
+### Graphical Diagnostics  
+  
+There are three helper functions that generate the graphical diagnostics. 
 
+```r
+generate_tv_graph(matchResult)
+generate_pairdistance_graph(matchResult)
+generate_pairdistance_balance_graph(matchResult)
 
+```
+  
+### Get Matched Data   
+  
+Users can use the helper function __matched_data__ to obtain the dataframe containing only the matched treated and control pairings by passing in the result from the main matching function and the index of the match.     
+
+```r
+matched_data(matchResult, 13)
+```  
+  
+Then, users can use outcome analysis of their choice upon the matched data. 

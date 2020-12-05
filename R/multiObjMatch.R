@@ -6,11 +6,6 @@ library(matchMulti)
 library(cobalt)
 # library(vioplot)
 library(cobalt)
-source('/Users/hanshichao/Desktop/SHICHAO/College/MultiObjMatch/MultiObjMatch/R/tradeoff_functions_v5.R')
-source('/Users/hanshichao/Desktop/SHICHAO/College/MultiObjMatch/MultiObjMatch/R/descr_stats.R')
-source('/Users/hanshichao/Desktop/SHICHAO/College/MultiObjMatch/MultiObjMatch/R/attributable_effects_v3.R')
-
-
 
 rho_proposition <- function(paircosts.list, rho.max.factor=10, rho1old, rho2old){
   rho.min <- 1e-2
@@ -111,13 +106,12 @@ getExactOn <- function(dat, exactList){
   return(exactOn)
 }
 
-
 #' The main matching function that can return a matching object
 #'
-#' @param df dataframe that contain columns indicating treatment, outcome and covariates
+#' @param df data frame that contain columns indicating treatment, outcome and covariates
 #' @param treatCol character of name of the column indicating treatment assignment
 #' @param responseCol character of name of the column indicating the outcome variable
-#' @param distList factor of the names of the
+#' @param distList factor of the names of the variables used for calculating within-pair distance
 #' @param exactlist factor of the names of the variables that we want exact matching on
 #' @param myBalCol charactor of column name of the variable that we want to evaluate balance on
 #' @param rho1 factor of values of rho1. Default value is c(1).
@@ -131,8 +125,9 @@ getExactOn <- function(dat, exactList){
 #' @param maxIter interger of the maximum number of iterations to search for (rho1, rho2) pair that improve the matching
 #' @param rho.max.f double of the scaling factor used in proposal for rhos; default is 10
 #'
-#' @return a matching object
-#' @export
+#' @return a list whose elements are (1) "rhoList": list of rhos for each match (2) "matchList": list of matches indexed by number (3) "treatmentCol": character of treatment variable (4) "covs": factor of names of the variables used for calculating within-pair distance (5) "exactCovs": factor of names of variables that we want exact or close match on
+#' (6) "idMapping": factor of row index for each observation in the sorted data frame for internal use (6) "stats": data frame of important statistics (total variation distance) for variable on which marginal balance is measured (7)"b.var": character of the variable on which marginal balance is measured (8) "dataTable": data frame sorted by treatment value
+#' (10) "df": data frame of input data (11) "pair_cost": list of pair-wise distance sum for each match
 multiObjMatch <- function(df, treatCol, responseCol, distList, exactlist, myBalCol, rho1=c(1), rho2=c(1,2,3),propensityCols = NULL, pScores = NULL, idCol = NULL, maxUnMatched = 0.25, caliperOption=0.25, toleranceOption=1e-2, maxIter=0, rho.max.f = 10){
   ## 0. Data preprocessing
   dat = df
@@ -373,9 +368,9 @@ compare_tables <- function(balanceTable){
 
 #' Generate a table that compare the covariate balance across different possible matches
 #'
-#' @param matchingResult a matchingResult object that contain all the needed information for matches
+#' @param matchingResult an object returned by the main matching function multiObjMatch
 #' @param covList factor of names of covariates that we want to evaluate covariate balance on; default is NULL. When set to Null, the program will compare the covariates that have been used to construct a propensity model
-#' @param display_option whether to display all the matches; default is FALSE, where matches at each quantile is displayed
+#' @param display_option boolean value of whether to display all the matches; default is FALSE, where matches at each quantile is displayed
 #' @param stat character of the name of the statistic used for measuring covariate balance; default is "mean.diff". This argument is the same as used in "cobalt" package
 #'
 #' @return a dataframe that shows covariate balance in different matches
@@ -397,7 +392,7 @@ get_five_index <- function(matchingResult){
 
 #' Plotting function that generate the total variation imbalance v.s. number of unmatched treated units
 #'
-#' @param matchingResult a matching result object containing information for all matches
+#' @param matchingResult an object returned by the main matching function multiObjMatch
 #'
 #' @return NULL
 #' @export
@@ -421,7 +416,7 @@ generate_tv_graph <- function(matchingResult){
 
 #' Plotting function that generate sum of pair-wise distance v.s. number of unmatched treated units
 #'
-#' @param matchingResult a matching result object containing information for all matches
+#' @param matchingResult an object returned by the main matching function multiObjMatch
 #'
 #' @return NULL
 #' @export
@@ -445,7 +440,7 @@ generate_pairdistance_graph <- function(matchingResult){
 
 #' Plotting function that generate sum of pair-wise distance v.s. total variation imbalance on balance variable
 #'
-#' @param matchingResult a matching result object containing information for all matches
+#' @param matchingResult an object returned by the main matching function multiObjMatch
 #'
 #' @return NULL
 #' @export
@@ -495,8 +490,8 @@ matched_index <- function(matchingResult){
 
 #' A function that returns the dataframe that contains only matched pairs from the original data frame with specified match index
 #'
-#' @param matchingResult matchingResult object that contains all the information for matches
-#' @param match_num the index of match that the user want to extract paired observations from
+#' @param matchingResult an object returned by the main matching function multiObjMatch
+#' @param match_num Integer index of match that the user want to extract paired observations from
 #'
 #' @return dataframe that contains only matched pair data
 #' @export
@@ -513,7 +508,7 @@ matched_data <- function(matchingResult, match_num){
 #'
 #' @param matchingResult matchingResult object that contains information for all matches
 #'
-#' @return dataframe that contain number of matched units as well as the percentage of matched units
+#' @return data frame that contain number of matched units as well as the percentage of matched units
 #' @export
 #'
 #' @examples

@@ -7,7 +7,7 @@
 generate_tv_graph(matchingResult)
 }
 \arguments{
-\item{matchingResult}{a matching result object containing information for all matches}
+\item{matchingResult}{an object returned by the main matching function multiObjMatch}
 }
 \description{
 Plotting function that generate the total variation imbalance v.s. number of unmatched treated units

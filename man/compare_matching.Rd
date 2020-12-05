@@ -12,11 +12,11 @@ compare_matching(
 )
 }
 \arguments{
-\item{matchingResult}{a matchingResult object that contain all the needed information for matches}
+\item{matchingResult}{an object returned by the main matching function multiObjMatch}
 
 \item{covList}{factor of names of covariates that we want to evaluate covariate balance on; default is NULL. When set to Null, the program will compare the covariates that have been used to construct a propensity model}
 
-\item{display_option}{whether to display all the matches; default is FALSE, where matches at each quantile is displayed}
+\item{display_option}{boolean value of whether to display all the matches; default is FALSE, where matches at each quantile is displayed}
 
 \item{stat}{character of the name of the statistic used for measuring covariate balance; default is "mean.diff". This argument is the same as used in "cobalt" package}
 }

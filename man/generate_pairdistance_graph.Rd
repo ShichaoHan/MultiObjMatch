@@ -7,7 +7,7 @@
 generate_pairdistance_graph(matchingResult)
 }
 \arguments{
-\item{matchingResult}{a matching result object containing information for all matches}
+\item{matchingResult}{an object returned by the main matching function multiObjMatch}
 }
 \description{
 Plotting function that generate sum of pair-wise distance v.s. number of unmatched treated units

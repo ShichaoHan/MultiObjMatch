@@ -10,7 +10,7 @@ getUnmatched(matchingResult)
 \item{matchingResult}{matchingResult object that contains information for all matches}
 }
 \value{
-dataframe that contain number of matched units as well as the percentage of matched units
+data frame that contain number of matched units as well as the percentage of matched units
 }
 \description{
 A function that generate the percentage of unmatched units for each match.

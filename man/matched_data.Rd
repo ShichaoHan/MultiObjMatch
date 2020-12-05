@@ -7,9 +7,9 @@
 matched_data(matchingResult, match_num)
 }
 \arguments{
-\item{matchingResult}{matchingResult object that contains all the information for matches}
+\item{matchingResult}{an object returned by the main matching function multiObjMatch}
 
-\item{match_num}{the index of match that the user want to extract paired observations from}
+\item{match_num}{Integer index of match that the user want to extract paired observations from}
 }
 \value{
 dataframe that contains only matched pair data

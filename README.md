@@ -13,7 +13,7 @@ This section provides a guide to the package usage. Before running the example, 
 
 ```r
 library(devtools)
-install_github("ShichaoHan/MultiObjMatch")
+install_github("ShichaoHan/MultiObjMatch", ref="main")
 library(MultiObjMatch)
 ```   
   

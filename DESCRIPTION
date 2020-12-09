@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: Shichao Han, Sam Pimentel
 Maintainer: Shichao Han <schan21@berkeley.edu>
 Description: Matching algorithm based on network-flow structure. Users are able to modify the emphasis on three different optimization goals: (1) sum of pair-wise distance (2) number of unmatched units (3) total variation distance between balance variable.
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 

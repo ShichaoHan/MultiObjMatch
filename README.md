@@ -20,8 +20,8 @@ library(MultiObjMatch)
 In the demo below, the dataset "lalonde" is loaded from the package MatchIt.   
   
 ```r
-library(MatchIt)
-data("lalonde")
+library(cobalt)
+data("lalonde", package="cobalt")
 ```
 
   
@@ -33,7 +33,7 @@ After data pre-processing, users can use the main matching function __multiObjMa
 psCols <- c("age", "educ", "married", "nodegree")
 treatVal <- "treat"
 responseVal <- "re78"  
-pairDistVal1 <- c("age","married","educ", "nodegree")
+pairDistVal <- c("age","married","educ", "nodegree")
 exactVal <- c("educ") 
 myBalVal <- c("race")
 r1s <- c(0.01,0.02,0.03,0.1,0.5,1,1.5,2,2.5,4,5,6,7,8,9,10)
@@ -49,7 +49,7 @@ matchResult <- multiObjMatch(lalonde, treatVal, responseVal, pairDistVal,
 Users can use the main function __compare_matching__ on specified covariates to compare the covariate balance across different matching. 
 ```r
 
-compare_matching(mathResult, covList=c("age", "educ", "race", "married", "nodegree"))
+compare_matching(matchResult, covList=c("age", "educ", "race", "married", "nodegree"))
 ```  
   
 The number of matched units and percentage of matched units can be automatically generated using the helper function __getUnmatched__:  

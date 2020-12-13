@@ -17,5 +17,6 @@ Imports:
     fields,
     plyr,
     RCurl,
-    gtools
+    gtools,
+    rcbalance
 RoxygenNote: 7.1.1

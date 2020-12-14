@@ -247,27 +247,27 @@ addExclusion <- function(net, remove = FALSE){
 
 
 
-# matrix2cost <- function(net, distance){
-# 	if(dim(distance)[1] != length(net$treatedNodes) || dim(distance)[2] != length(net$controlNodes)){
-# 		stop('Dimensions of distance object and problem do not agree')
-# 	}
-# 	#if internal network structure is sparse, apply sparsity mask to distance
-# 	if(!net$dense){
-# 		mask <- edgelist2ISM(net$edgeStructure)
-# 		distance <- distance*mask
-# 	}
-# 	#vectorize distance
-# 	if(inherits(distance, 'InfinitySparseMatrix')){
-# 		#ISMs index row-first
-# 		distance.v <- as.vector(distance)
-# 	} else {
-# 		#regular matrices index column-first and don't automatically drop infinities
-# 		distance.v <- as.vector(t(distance))
-# 		distance.v <- distance.v[is.finite(distance.v)]
-# 	}
-# 	distance.v
-# 	#TODO -- add zeroes if other edges are present in network.
-# }
+matrix2cost <- function(net, distance){
+	if(dim(distance)[1] != length(net$treatedNodes) || dim(distance)[2] != length(net$controlNodes)){
+		stop('Dimensions of distance object and problem do not agree')
+	}
+	#if internal network structure is sparse, apply sparsity mask to distance
+	if(!net$dense){
+		mask <- edgelist2ISM(net$edgeStructure)
+		distance <- distance*mask
+	}
+	#vectorize distance
+	if(inherits(distance, 'InfinitySparseMatrix')){
+		#ISMs index row-first
+		distance.v <- as.vector(distance)
+	} else {
+		#regular matrices index column-first and don't automatically drop infinities
+		distance.v <- as.vector(t(distance))
+		distance.v <- distance.v[is.finite(distance.v)]
+	}
+	distance.v
+	#TODO -- add zeroes if other edges are present in network.
+}
 
 
 #### Create a more user-friendly data structure to represent the edge costs in a network.  Internally the network object

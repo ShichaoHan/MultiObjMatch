@@ -1,3 +1,4 @@
+library(plyr)
 obj.to.match <- function(out.elem, already.done = NULL, prev.obj = NULL){
 	tcarcs <- length(unlist(out.elem$net$edgeStructure))
 	edge.info <- extractEdges(out.elem$net)

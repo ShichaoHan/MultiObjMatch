@@ -1,4 +1,18 @@
 require(fields)
+
+#' Title
+#'
+#' @param z
+#' @param X
+#' @param exact
+#' @param dist.type
+#' @param calip.option
+#' @param calip.cov
+#' @param caliper
+#' @param verbose
+#' @importFrom MASS ginv
+#' @return
+
 build.dist.struct<-
   function(z, X, exact = NULL, dist.type = "Mahalanobis", calip.option = 'propensity', calip.cov = NULL, caliper = 0.2, verbose = FALSE){
 
@@ -103,9 +117,6 @@ build.dist.struct<-
       control.names <- ctrl.nums[exact[z == 0] == exact[treated[i]]]
       if(dist.type == "Mahalanobis"){
         costi <- mahalanobis(rX[controls, ,drop=FALSE], rX[treated[i], ], icov, inverted = T)
-      }
-      if(dist.type == "Euclidean"){
-        costi <- rdist(rX[controls, ,drop=FALSE], rX[treated[i], ])
       }
 
       if (calip.option != 'none') {

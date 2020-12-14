@@ -18,5 +18,6 @@ Imports:
     plyr,
     RCurl,
     gtools,
-    rcbalance
+    rcbalance,
+    MASS
 RoxygenNote: 7.1.1

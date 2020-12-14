@@ -124,7 +124,7 @@ getExactOn <- function(dat, exactList){
 #' @param toleranceOption double of tolerance of close match distance; default is 1e-2
 #' @param maxIter interger of the maximum number of iterations to search for (rho1, rho2) pair that improve the matching
 #' @param rho.max.f double of the scaling factor used in proposal for rhos; default is 10
-#'
+#' @importFrom plyr laply
 #' @return a list whose elements are (1) "rhoList": list of rhos for each match (2) "matchList": list of matches indexed by number (3) "treatmentCol": character of treatment variable (4) "covs": factor of names of the variables used for calculating within-pair distance (5) "exactCovs": factor of names of variables that we want exact or close match on
 #' (6) "idMapping": factor of row index for each observation in the sorted data frame for internal use (6) "stats": data frame of important statistics (total variation distance) for variable on which marginal balance is measured (7)"b.var": character of the variable on which marginal balance is measured (8) "dataTable": data frame sorted by treatment value
 #' (10) "df": data frame of input data (11) "pair_cost": list of pair-wise distance sum for each match

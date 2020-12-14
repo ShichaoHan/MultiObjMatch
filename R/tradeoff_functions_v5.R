@@ -1,4 +1,3 @@
-require(plyr)
 
 #### Create a basic network flow problem to represent a match ###
 netFlowMatch <- function(z, IDs = NULL){

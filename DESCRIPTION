@@ -13,6 +13,7 @@ Imports:
     dplyr,
     optmatch,
     matchMulti,
+    fields,
     plyr,
     RCurl,
     gtools,

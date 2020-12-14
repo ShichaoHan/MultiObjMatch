@@ -1,17 +1,4 @@
-require(fields)
-
-#' Title
-#'
-#' @param z
-#' @param X
-#' @param exact
-#' @param dist.type
-#' @param calip.option
-#' @param calip.cov
-#' @param caliper
-#' @param verbose
-#' @importFrom MASS ginv
-#' @return
+#require(fields)
 
 build.dist.struct<-
   function(z, X, exact = NULL, dist.type = "Mahalanobis", calip.option = 'propensity', calip.cov = NULL, caliper = 0.2, verbose = FALSE){

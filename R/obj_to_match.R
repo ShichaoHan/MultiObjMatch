@@ -12,7 +12,7 @@ obj.to.match <- function(out.elem, already.done = NULL, prev.obj = NULL){
 				2] == 0), 1]), ]
 		}
 		match.df$treat <- as.factor(as.character(match.df$treat))
-		matches <- as.matrix(daply(match.df, .(match.df$treat), function(treat.edges) treat.edges$control[treat.edges$x ==
+		matches <- as.matrix(daply(match.df, .(treat), function(treat.edges) treat.edges$control[treat.edges$x ==
         1], .drop_o = FALSE))
 		matches - length(out.elem$net$treatedNodes)
 	}

@@ -33,10 +33,10 @@ After data pre-processing, users can use the main matching function __multiObjMa
 psCols <- c("age", "educ", "married", "nodegree")
 treatVal <- "treat"
 responseVal <- "re78"  
-pairDistVal <- c("age","married","educ", "nodegree")
+pairDistVal <- c("age", "married", "educ", "nodegree")
 exactVal <- c("educ") 
 myBalVal <- c("race")
-r1s <- c(0.01,0.02,0.03,0.1,0.5,1,1.5,2,2.5,4,5,6,7,8,9,10)
+r1s <- c(0.01, 0.02, 0.03, 0.04, 0.1, 0.3, 0.5, 0.7, 0.9)
 r2s <- c(1)
 matchResult <- multiObjMatch(lalonde, treatVal, responseVal, pairDistVal, 
     exactVal, myBalVal, rho1=r1s, rho2=r2s, propensityCols = psCols, 
